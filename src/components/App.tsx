@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, SetStateAction, useCallback, useState } from "react";
+import { ChangeEvent, FC, useCallback, useState } from "react";
 import { MemoList } from "./MemoList";
 import { useMemoList } from "../hooks/userMemoList";
 
@@ -11,11 +11,11 @@ export const App: FC = () => {
     setText(e.target.value);
   };
 
-  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      onClickAdd();
-    }
-  };
+  // const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  //   if (e.key === "Enter") {
+  //     onClickAdd();
+  //   }
+  // };
 
   const onClickAdd = () => {
     addTodo(text);
@@ -41,7 +41,7 @@ export const App: FC = () => {
           type="text"
           value={text}
           onChange={onChangeText}
-          onKeyDown={onKeyDown}
+          // onKeyDown={onKeyDown}
         />
         <button
           className=" disabled:bg-slate-100 disabled:text-slate-300 disabled:border-slate-200 disabled:shadow-none text-white rounded-full py-2 px-6 bg-sky-500 hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300"
