@@ -4,7 +4,10 @@ import { CgCalendarDue } from "react-icons/cg";
 
 type Props = {
   todos: toDoList[];
-  onClickDelete: (index: number) => void;
+  onClickDelete: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    index: number
+  ) => void;
   onClickTodoEdit: (todo: toDoList, index: number) => void;
 };
 
@@ -42,8 +45,8 @@ export const ToDoList: FC<Props> = (props) => {
               <div className="w-2/12">
                 <button
                   className="text-white text-sm rounded-md ml-5 px-3 bg-sky-500 hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300"
-                  onClick={() => {
-                    onClickDelete(index);
+                  onClick={(e) => {
+                    onClickDelete(e, index);
                   }}
                 >
                   削 除

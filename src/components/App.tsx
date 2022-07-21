@@ -93,7 +93,8 @@ export const App: FC = () => {
   };
 
   const onClickDelete = useCallback(
-    (index: number) => {
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, index: number) => {
+      e.stopPropagation();
       deleteTodo(index);
     },
     [deleteTodo]
